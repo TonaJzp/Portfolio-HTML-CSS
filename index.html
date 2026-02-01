@@ -1,14 +1,115 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portafolio | Antonio Jesús Jiménez</title>
+    <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
+    <header class="cabecera">
+        <nav class="navegacion">
+            <a class="marca" href="#inicio">Antonio Jesús Jiménez</a>
 
+            <ul class="lista-nav">
+                <li><a class="enlace-nav" href="#sobre-mi">Sobre mí</a></li>
+                <li><a class="enlace-nav" href="#proyectos">Proyectos</a></li>
+                <li><a class="enlace-nav" href="#habilidades">Habilidades</a></li>
+                <li><a class="enlace-nav" href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="seccion hero" id="inicio">
+            <div class="contenedor">
+                <h1 class="hero-titulo">Hola, soy Antonio Jesús Jiménez</h1>
+                <p class="hero-texto">Breve descripción.</p>
+
+                <div class="hero-acciones">
+                    <a class="boton" href="#proyectos">Ver proyectos</a>
+                    <a class="boton boton-fantasma" href="#contacto">Contactar</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="seccion" id="sobre-mi">
+            <div class="contenedor">
+                <h2>Sobre mí</h2>
+                <p>Texto sobre ti.</p>
+            </div>
+        </section>
+
+        <section class="seccion" id="proyectos">
+            <div class="contenedor">
+                <h2>Proyectos</h2>
+
+                <div class="rejilla">
+                    <article class="tarjeta">
+                        <h3>Proyecto 1</h3>
+                        <p>Descripción corta.</p>
+                        <a class="enlace-texto" href="#">Ver</a>
+                    </article>
+
+                    <article class="tarjeta">
+                        <h3>Proyecto 2</h3>
+                        <p>Descripción corta.</p>
+                        <a class="enlace-texto" href="#">Ver</a>
+                    </article>
+
+                    <article class="tarjeta">
+                        <h3>Proyecto 3</h3>
+                        <p>Descripción corta.</p>
+                        <a class="enlace-texto" href="#">Ver</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="seccion" id="habilidades">
+            <div class="contenedor">
+                <h2>Habilidades</h2>
+                <ul class="lista-etiquetas">
+                    <li class="etiqueta">HTML</li>
+                    <li class="etiqueta">CSS</li>
+                    <li class="etiqueta">Responsive</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="seccion" id="contacto">
+            <div class="contenedor">
+                <h2>Contacto</h2>
+
+                <form class="formulario" action="#" method="post">
+                    <label class="campo">
+                        <span>Nombre</span>
+                        <input type="text" name="nombre" required />
+                    </label>
+
+                    <label class="campo">
+                        <span>Email</span>
+                        <input type="email" name="email" required />
+                    </label>
+
+                    <label class="campo">
+                        <span>Mensaje</span>
+                        <textarea name="mensaje" rows="5" required></textarea>
+                    </label>
+
+                    <button class="boton" type="submit">Enviar</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="pie">
+        <div class="contenedor">
+            <p>© 2026 Antonio Jesús Jiménez</p>
+        </div>
+    </footer>
 </body>
 
 </html>

@@ -1,11 +1,18 @@
-/* Modo Claro */
+/* =========================
+   ESTILOS BASE (básicos)
+   - Clases en castellano
+   - Sin redundancias
+   - Comentarios en castellano
+========================= */
+
+/* Variables mínimas (modo claro por defecto) */
 :root {
   --color-fondo: #ffffff;
   --color-texto: #111111;
   --color-borde: #e5e5e5;
   --color-acento: #2563eb;
 
-  /* Color para superficies */
+  /* Color para superficies (tarjetas e inputs) */
   --color-superficie: #f6f6f6;
 
   /* Medidas (ya se usan en el CSS) */
@@ -13,7 +20,7 @@
   --espacio: 24px;
 }
 
-/* Modo oscuro */
+/* Modo oscuro (sin JavaScript) */
 @media (prefers-color-scheme: dark) {
   :root {
     --color-fondo: #0f172a;
@@ -31,12 +38,27 @@
 
 body {
   margin: 0;
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   background: var(--color-fondo);
   color: var(--color-texto);
   line-height: 1.5;
 }
 
+/* Títulos con la segunda tipografía */
+h1,
+h2,
+h3 {
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+}
+
+/* Imágenes: evitar desbordes */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Contenedor */
 .contenedor {
   width: min(100% - 32px, var(--ancho-contenedor));
   margin: 0 auto;
@@ -67,8 +89,16 @@ body {
   color: inherit;
 }
 
+/* Secciones */
 .seccion {
   padding: var(--espacio) 0;
+}
+
+/* Hero */
+.foto-perfil {
+  width: 160px;
+  height: 160px;
+  margin-bottom: 12px;
 }
 
 .hero-titulo {
@@ -85,7 +115,7 @@ body {
   flex-wrap: wrap;
 }
 
-/* Botones */
+/* Botones (sirve para <a> y <button>) */
 .boton {
   display: inline-block;
   padding: 10px 14px;
@@ -94,6 +124,10 @@ body {
   color: #fff;
   text-decoration: none;
   border: 0;
+}
+
+button.boton {
+  cursor: pointer;
 }
 
 .boton-fantasma {
@@ -116,6 +150,19 @@ body {
   background: var(--color-superficie);
 }
 
+.imagen-proyecto {
+  border-radius: 10px;
+  margin-bottom: 12px;
+}
+
+/* Banner */
+.imagen-banner {
+  width: 100%;
+  max-width: 520px;
+  border-radius: 10px;
+  margin-top: 16px;
+}
+
 /* Etiquetas */
 .lista-etiquetas {
   display: flex;
@@ -130,6 +177,29 @@ body {
   border: 1px solid var(--color-borde);
   border-radius: 999px;
   padding: 6px 10px;
+}
+
+/* Contacto con iconos SVG */
+.lista-contacto {
+  list-style: none;
+  margin: 16px 0 0;
+  padding: 0;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.enlace-contacto {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.icono {
+  width: 20px;
+  height: 20px;
 }
 
 /* Formulario */

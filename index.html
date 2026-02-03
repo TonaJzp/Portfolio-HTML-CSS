@@ -4,14 +4,21 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Portafolio | Antonio Jesús Jiménez</title>
+    <title>Portafolio | NOMBRE APELLIDOS</title>
+
+    <!-- 2 tipografías (Google Fonts, libres / open source) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@600&display=swap" />
+
     <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
     <header class="cabecera">
         <nav class="navegacion">
-            <a class="marca" href="#inicio">Antonio Jesús Jiménez</a>
+            <a class="marca" href="#inicio">NOMBRE</a>
 
             <ul class="lista-nav">
                 <li><a class="enlace-nav" href="#sobre-mi">Sobre mí</a></li>
@@ -25,7 +32,11 @@
     <main>
         <section class="seccion hero" id="inicio">
             <div class="contenedor">
-                <h1 class="hero-titulo">Hola, soy Antonio Jesús Jiménez</h1>
+                <!-- PNG con transparencia -->
+                <img class="foto-perfil" src="assets/imagenes/perfil-transparente.png" alt="Avatar con iniciales"
+                    width="160" height="160" />
+
+                <h1 class="hero-titulo">Hola, soy NOMBRE APELLIDOS</h1>
                 <p class="hero-texto">Breve descripción.</p>
 
                 <div class="hero-acciones">
@@ -38,7 +49,14 @@
         <section class="seccion" id="sobre-mi">
             <div class="contenedor">
                 <h2>Sobre mí</h2>
-                <p>Texto sobre ti.</p>
+                <p>Texto breve y directo sobre ti.</p>
+
+                <!-- AVIF + tamaños distintos según pantalla (srcset + sizes) -->
+                <img class="imagen-banner" src="assets/imagenes/banner-960.avif" srcset="
+              assets/imagenes/banner-480.avif 480w,
+              assets/imagenes/banner-960.avif 960w
+            " sizes="(max-width: 600px) 100vw, 520px" alt="Imagen decorativa del portafolio" width="960" height="480"
+                    loading="lazy" />
             </div>
         </section>
 
@@ -48,18 +66,37 @@
 
                 <div class="rejilla">
                     <article class="tarjeta">
+                        <!-- WEBP responsive (tamaños distintos) -->
+                        <img class="imagen-proyecto" src="assets/imagenes/proyecto-960.webp" srcset="
+                  assets/imagenes/proyecto-480.webp 480w,
+                  assets/imagenes/proyecto-960.webp 960w
+                " sizes="(max-width: 600px) 100vw, 320px" alt="Imagen del proyecto 1" width="960" height="600"
+                            loading="lazy" />
+
                         <h3>Proyecto 1</h3>
                         <p>Descripción corta.</p>
                         <a class="enlace-texto" href="#">Ver</a>
                     </article>
 
                     <article class="tarjeta">
+                        <img class="imagen-proyecto" src="assets/imagenes/proyecto-960.webp" srcset="
+                  assets/imagenes/proyecto-480.webp 480w,
+                  assets/imagenes/proyecto-960.webp 960w
+                " sizes="(max-width: 600px) 100vw, 320px" alt="Imagen del proyecto 2" width="960" height="600"
+                            loading="lazy" />
+
                         <h3>Proyecto 2</h3>
                         <p>Descripción corta.</p>
                         <a class="enlace-texto" href="#">Ver</a>
                     </article>
 
                     <article class="tarjeta">
+                        <img class="imagen-proyecto" src="assets/imagenes/proyecto-960.webp" srcset="
+                  assets/imagenes/proyecto-480.webp 480w,
+                  assets/imagenes/proyecto-960.webp 960w
+                " sizes="(max-width: 600px) 100vw, 320px" alt="Imagen del proyecto 3" width="960" height="600"
+                            loading="lazy" />
+
                         <h3>Proyecto 3</h3>
                         <p>Descripción corta.</p>
                         <a class="enlace-texto" href="#">Ver</a>
@@ -82,6 +119,33 @@
         <section class="seccion" id="contacto">
             <div class="contenedor">
                 <h2>Contacto</h2>
+
+                <!-- 3 iconos SVG distintos -->
+                <ul class="lista-contacto">
+                    <li>
+                        <a class="enlace-contacto" href="mailto:tuemail@ejemplo.com">
+                            <img class="icono" src="assets/iconos/icono-email.svg" alt="Icono de email" width="20"
+                                height="20" />
+                            Email
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="enlace-contacto" href="#">
+                            <img class="icono" src="assets/iconos/icono-enlace.svg" alt="Icono de enlace" width="20"
+                                height="20" />
+                            Enlace
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="enlace-contacto" href="#">
+                            <img class="icono" src="assets/iconos/icono-codigo.svg" alt="Icono de código" width="20"
+                                height="20" />
+                            Código
+                        </a>
+                    </li>
+                </ul>
 
                 <form class="formulario" action="#" method="post">
                     <label class="campo">
@@ -107,7 +171,7 @@
 
     <footer class="pie">
         <div class="contenedor">
-            <p>© 2026 Antonio Jesús Jiménez</p>
+            <p>© 2026 NOMBRE APELLIDOS</p>
         </div>
     </footer>
 </body>

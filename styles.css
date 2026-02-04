@@ -1,37 +1,26 @@
-/* =========================
-   ESTILOS BASE (básicos)
-   - Clases en castellano
-   - Sin redundancias
-   - Comentarios en castellano
-========================= */
-
-/* Variables mínimas (modo claro por defecto) */
 :root {
   --color-fondo: #ffffff;
   --color-texto: #111111;
+  --color-texto-suave: #555555;
   --color-borde: #e5e5e5;
   --color-acento: #2563eb;
-
-  /* Color para superficies (tarjetas e inputs) */
   --color-superficie: #f6f6f6;
 
-  /* Medidas (ya se usan en el CSS) */
   --ancho-contenedor: 1100px;
   --espacio: 24px;
 }
 
-/* Modo oscuro (sin JavaScript) */
 @media (prefers-color-scheme: dark) {
   :root {
     --color-fondo: #0f172a;
     --color-texto: #e5e7eb;
+    --color-texto-suave: #b6c0d1;
     --color-borde: #334155;
     --color-acento: #60a5fa;
     --color-superficie: #111c33;
   }
 }
 
-/* Ajustes básicos */
 * {
   box-sizing: border-box;
 }
@@ -44,29 +33,37 @@ body {
   line-height: 1.5;
 }
 
-/* Títulos con la segunda tipografía */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
 h1,
 h2,
-h3 {
+h3,
+h4 {
   font-family: "Playfair Display", Georgia, "Times New Roman", serif;
 }
 
-/* Imágenes: evitar desbordes */
+p {
+  margin: 0;
+}
+
 img {
   max-width: 100%;
   height: auto;
   display: block;
 }
 
-/* Contenedor */
 .contenedor {
   width: min(100% - 32px, var(--ancho-contenedor));
   margin: 0 auto;
 }
 
-/* Cabecera y navegación */
+/* Cabecera */
 .cabecera {
   border-bottom: 1px solid var(--color-borde);
+  background: var(--color-fondo);
 }
 
 .navegacion {
@@ -77,6 +74,11 @@ img {
   padding: 16px 0;
 }
 
+.marca {
+  font-weight: 600;
+}
+
+/* TRANSICIÓN 1 (nav): subrayado suave al pasar el ratón */
 .lista-nav {
   display: flex;
   gap: 16px;
@@ -86,27 +88,56 @@ img {
 }
 
 .enlace-nav {
-  color: inherit;
+  position: relative;
+  padding: 6px 0;
 }
 
-/* Secciones */
+.enlace-nav::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 2px;
+  width: 100%;
+  height: 2px;
+  background: var(--color-acento);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 180ms ease;
+}
+
+.enlace-nav:hover::after {
+  transform: scaleX(1);
+}
+
 .seccion {
   padding: var(--espacio) 0;
 }
 
-/* Hero */
-.foto-perfil {
-  width: 160px;
-  height: 160px;
-  margin-bottom: 12px;
+/* HERO */
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr minmax(260px, 420px);
+  align-items: center;
+  gap: 32px;
+}
+
+.hero-info {
+  min-width: 0;
+
+  /* ANIMACIÓN 1: entrada del texto del hero */
+  animation: entrada-hero 420ms ease-out both;
 }
 
 .hero-titulo {
-  margin: 0 0 12px;
+  margin: 0 0 10px;
+  font-size: clamp(34px, 4.2vw, 52px);
+  line-height: 1.1;
 }
 
 .hero-texto {
   margin: 0 0 16px;
+  color: var(--color-texto-suave);
+  max-width: 60ch;
 }
 
 .hero-acciones {
@@ -115,15 +146,54 @@ img {
   flex-wrap: wrap;
 }
 
-/* Botones (sirve para <a> y <button>) */
+.hero-media {
+  display: flex;
+  justify-content: flex-end;
+
+  /* Necesario para el efecto 3D */
+  perspective: 900px;
+}
+
+/* ANIMACIÓN 3 (3D): movimiento suave tipo “tilt” */
+.hero-ilustracion {
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  transform-origin: center;
+  animation: tilt-3d 2.8s ease-in-out infinite;
+}
+
+@media (max-width: 900px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-media {
+    justify-content: center;
+    margin-top: 12px;
+  }
+
+  .hero-ilustracion {
+    max-width: 360px;
+  }
+}
+
+/* TRANSICIÓN 2 (botones): hover suave */
 .boton {
   display: inline-block;
   padding: 10px 14px;
   border-radius: 10px;
   background: var(--color-acento);
   color: #fff;
-  text-decoration: none;
   border: 0;
+  font-weight: 600;
+
+  transition: transform 160ms ease, filter 160ms ease;
+}
+
+.boton:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.05);
 }
 
 button.boton {
@@ -136,31 +206,60 @@ button.boton {
   border: 1px solid var(--color-borde);
 }
 
-/* Rejilla de proyectos */
+/* Rejillas y tarjetas */
 .rejilla {
   display: grid;
   gap: 16px;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 }
 
+.separador {
+  height: 18px;
+}
+
+/* TRANSICIÓN 3 (tarjetas): elevación suave al pasar el ratón */
 .tarjeta {
   border: 1px solid var(--color-borde);
-  border-radius: 10px;
-  padding: 16px;
+  border-radius: 14px;
+  padding: 14px;
   background: var(--color-superficie);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.08);
+
+  transition: transform 180ms ease, box-shadow 180ms ease;
 }
 
-.imagen-proyecto {
-  border-radius: 10px;
-  margin-bottom: 12px;
+.tarjeta:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.12);
 }
 
-/* Banner */
-.imagen-banner {
-  width: 100%;
-  max-width: 520px;
-  border-radius: 10px;
-  margin-top: 16px;
+.imagen-tarjeta {
+  border-radius: 12px;
+  border: 1px solid var(--color-borde);
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+.tarjeta h4 {
+  margin: 4px 0 0;
+  font-size: 22px;
+  text-align: center;
+}
+
+.tarjeta-descripcion {
+  color: var(--color-texto-suave);
+}
+
+.lista-detalles {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.lista-detalles li {
+  margin: 6px 0;
 }
 
 /* Etiquetas */
@@ -177,9 +276,10 @@ button.boton {
   border: 1px solid var(--color-borde);
   border-radius: 999px;
   padding: 6px 10px;
+  background: var(--color-superficie);
 }
 
-/* Contacto con iconos SVG */
+/* Contacto */
 .lista-contacto {
   list-style: none;
   margin: 16px 0 0;
@@ -193,13 +293,17 @@ button.boton {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  color: inherit;
-  text-decoration: none;
+  padding: 8px 10px;
+  border: 1px solid var(--color-borde);
+  border-radius: 10px;
+  background: var(--color-superficie);
 }
 
+/* ANIMACIÓN 2: iconos “respiran” */
 .icono {
   width: 20px;
   height: 20px;
+  animation: flotar-icono 1.6s ease-in-out infinite;
 }
 
 /* Formulario */
@@ -229,4 +333,45 @@ textarea {
 .pie {
   border-top: 1px solid var(--color-borde);
   padding: 16px 0;
+  color: var(--color-texto-suave);
+}
+
+/* =========================
+   KEYFRAMES (ANIMACIONES)
+========================= */
+
+@keyframes entrada-hero {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes flotar-icono {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* 3D: rotación suave con perspectiva aplicada en el contenedor */
+@keyframes tilt-3d {
+  0% {
+    transform: rotateY(-10deg) rotateX(4deg);
+  }
+  50% {
+    transform: rotateY(10deg) rotateX(-4deg);
+  }
+  100% {
+    transform: rotateY(-10deg) rotateX(4deg);
+  }
 }

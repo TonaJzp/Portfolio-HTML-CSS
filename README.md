@@ -20,15 +20,18 @@ Crear un portafolio personal usando únicamente **HTML y CSS**, cumpliendo los r
 ## Estructura del proyecto
 El proyecto contiene **un único HTML** y **un único CSS**, además de la carpeta de recursos.
 
-├─ index.html
-├─ styles.css
-├─ README.md
-└─ assets/
-    ├─ capturasPantalla/
-    ├─ fuentes/
-    ├─ iconos/
-    └─ imagenes/
+```text
+.
+├── index.html
+├── styles.css
+├── README.md
+└── assets/
+    ├── capturasPantalla/
+    ├── fuentes/
+    ├── iconos/
+    └── imagenes/
 
+```
 
 ### Contenido de carpetas
 - `assets/imagenes/`: imágenes del portafolio (PNG / WEBP / AVIF). Incluye imagen con transparencia y una imagen responsive con `srcset`.
@@ -45,25 +48,44 @@ El portafolio está organizado en estas secciones:
 - **Habilidades**: lista de habilidades en formato etiquetas.
 - **Contacto**: accesos (Email / LinkedIn / GitHub) y formulario centrado y estilizado.
 
-## Capturas de pantalla
-Las capturas deben incluir **cada apartado** en **escritorio** y en **móvil**.  
-Guárdalas en: `assets/capturasPantalla/`
+## Capturas de pantalla (incluidas en el README)
+Capturas guardadas en `assets/capturasPantalla/` (escritorio y móvil).
 
-### Escritorio (ancho aprox. 1366px o más)
-- Inicio: `assets/capturasPantalla/desktop-inicio.png`
-- Sobre mí: `assets/capturasPantalla/desktop-sobre-mi.png`
-- Títulos y certificaciones: `assets/capturasPantalla/desktop-titulos.png`
-- Habilidades: `assets/capturasPantalla/desktop-habilidades.png`
-- Contacto: `assets/capturasPantalla/desktop-contacto.png`
+---
 
-### Móvil (ancho aprox. 390px o similar)
-- Inicio: `assets/capturasPantalla/movil-inicio.png`
-- Sobre mí: `assets/capturasPantalla/movil-sobre-mi.png`
-- Títulos y certificaciones: `assets/capturasPantalla/movil-titulos.png`
-- Habilidades: `assets/capturasPantalla/movil-habilidades.png`
-- Contacto: `assets/capturasPantalla/movil-contacto.png`
+### Inicio
+| Escritorio | Móvil |
+|---|---|
+| ![Inicio (Escritorio)](assets/capturasPantalla/desktop-inicio.png) | <img src="assets/capturasPantalla/movil-inicio.png" alt="Inicio (Móvil)" width="300"> |
 
-> Nota: cuando estén creadas, estas imágenes deben existir en la ruta indicada para que la documentación sea comprobable.
+---
+
+### Sobre mí
+| Escritorio | Móvil |
+|---|---|
+| ![Sobre mí (Escritorio)](assets/capturasPantalla/desktop-sobre-mi.png) | <img src="assets/capturasPantalla/movil-sobre-mi.png" alt="Sobre mí (Móvil)" width="300"> |
+
+---
+
+### Títulos y certificaciones
+| Escritorio | Móvil |
+|---|---|
+| ![Títulos y certificaciones (Escritorio)](assets/capturasPantalla/desktop-titulos.png) | <img src="assets/capturasPantalla/movil-titulos.png" alt="Títulos y certificaciones (Móvil)" width="300"> |
+
+---
+
+### Habilidades
+| Escritorio | Móvil |
+|---|---|
+| ![Habilidades (Escritorio)](assets/capturasPantalla/desktop-habilidades.png) | <img src="assets/capturasPantalla/movil-habilidades.png" alt="Habilidades (Móvil)" width="300"> |
+
+---
+
+### Contacto
+| Escritorio | Móvil |
+|---|---|
+| ![Contacto (Escritorio)](assets/capturasPantalla/desktop-contacto.png) | <img src="assets/capturasPantalla/movil-contacto.png" alt="Contacto (Móvil)" width="300"> |
+
 
 ## Requisitos técnicos (checklist)
 - [x] Solo 1 archivo HTML (`index.html`) y 1 archivo CSS (`styles.css`).

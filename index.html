@@ -17,7 +17,7 @@
 <body>
     <header class="cabecera">
         <nav class="navegacion">
-            <a class="marca" href="#inicio">Antonio</a>
+            <a class="marca" href="#inicio">MiniTona</a>
 
             <ul class="lista-nav">
                 <li><a class="enlace-nav" href="#inicio">Inicio</a></li>
@@ -62,9 +62,29 @@
         <section class="seccion" id="sobre-mi">
             <div class="contenedor">
                 <h2>Sobre mí</h2>
+
                 <p>
-                    Me gusta construir proyectos claros, bien organizados y fáciles de mantener. Estoy reforzando bases
-                    sólidas en programación, diseño web y buenas prácticas.
+                    Soy Antonio Jesús Jiménez Polonio y me estoy formando en el área de desarrollo y sistemas. Me
+                    interesa construir
+                    proyectos claros, bien organizados y fáciles de mantener, cuidando la estructura del código, los
+                    estilos y la
+                    presentación final.
+                </p>
+                <br>
+                <p>
+                    Trabajo especialmente con HTML y CSS para maquetación responsive, y voy reforzando bases de
+                    programación para poder
+                    avanzar hacia aplicaciones más completas. Me gusta aprender con ejercicios prácticos y mejorar
+                    iterando: primero hago
+                    que funcione y se vea bien, y luego lo pulo para que sea más limpio y consistente.
+                </p>
+                <br>
+                <p>
+                    Me considero una persona constante, con atención al detalle y con ganas de seguir creciendo. Mi
+                    objetivo es seguir
+                    ampliando el portafolio con proyectos sencillos pero bien terminados, aplicando buenas prácticas y
+                    una estética
+                    cuidada.
                 </p>
             </div>
         </section>
@@ -118,7 +138,7 @@
                         <img class="imagen-tarjeta" src="assets/imagenes/cert-python.avif"
                             alt="Imagen de certificación de Python" width="960" height="600" loading="lazy" />
                         <h4>Python</h4>
-                        <p class="tarjeta-descripcion">Curso online (ejemplo): fundamentos y práctica.</p>
+                        <p class="tarjeta-descripcion">Curso online: fundamentos y práctica.</p>
                         <ul class="lista-detalles">
                             <li>Sintaxis, estructuras y funciones.</li>
                             <li>Clases, métodos y modularidad.</li>
@@ -130,7 +150,7 @@
                         <img class="imagen-tarjeta" src="assets/imagenes/cert-javascript.avif"
                             alt="Imagen de certificación de JavaScript" width="960" height="600" loading="lazy" />
                         <h4>JavaScript</h4>
-                        <p class="tarjeta-descripcion">Curso online (ejemplo): JavaScript moderno.</p>
+                        <p class="tarjeta-descripcion">Curso online: JavaScript moderno.</p>
                         <ul class="lista-detalles">
                             <li>ES6+, objetos y funciones.</li>
                             <li>Lógica y manipulación de datos.</li>
@@ -142,7 +162,7 @@
                         <img class="imagen-tarjeta" src="assets/imagenes/cert-php.avif"
                             alt="Imagen de certificación de PHP" width="960" height="600" loading="lazy" />
                         <h4>PHP</h4>
-                        <p class="tarjeta-descripcion">Curso online (ejemplo): PHP y back-end.</p>
+                        <p class="tarjeta-descripcion">Curso online: PHP y back-end.</p>
                         <ul class="lista-detalles">
                             <li>Formularios y validación.</li>
                             <li>Sesiones y estructura básica.</li>
@@ -160,6 +180,15 @@
                     <li class="etiqueta">HTML</li>
                     <li class="etiqueta">CSS</li>
                     <li class="etiqueta">Responsive</li>
+                    <li class="etiqueta">Flexbox</li>
+                    <li class="etiqueta">CSS Grid</li>
+                    <li class="etiqueta">Git</li>
+                    <li class="etiqueta">Maquetación</li>
+                    <li class="etiqueta">Accesibilidad básica</li>
+                    <li class="etiqueta">Linux</li>
+                    <li class="etiqueta">SQL (base)</li>
+                    <li class="etiqueta">JavaScript (base)</li>
+                    <li class="etiqueta">Python (base)</li>
                 </ul>
             </div>
         </section>
@@ -178,40 +207,43 @@
                     </li>
 
                     <li>
-                        <a class="enlace-contacto" href="#">
-                            <img class="icono" src="assets/iconos/icono-enlace.svg" alt="Icono de enlace" width="20"
+                        <a class="enlace-contacto" href="https://www.linkedin.com/in/tu-usuario" target="_blank"
+                            rel="noopener">
+                            <img class="icono" src="assets/iconos/icono-linkedin.svg" alt="Icono de LinkedIn" width="20"
                                 height="20" />
-                            Enlace
+                            LinkedIn
                         </a>
                     </li>
 
                     <li>
-                        <a class="enlace-contacto" href="#">
-                            <img class="icono" src="assets/iconos/icono-codigo.svg" alt="Icono de código" width="20"
+                        <a class="enlace-contacto" href="https://github.com/tu-usuario" target="_blank" rel="noopener">
+                            <img class="icono" src="assets/iconos/icono-github.svg" alt="Icono de GitHub" width="20"
                                 height="20" />
-                            Código
+                            GitHub
                         </a>
                     </li>
                 </ul>
 
-                <form class="formulario" action="#" method="post">
-                    <label class="campo">
-                        <span>Nombre</span>
-                        <input type="text" name="nombre" required />
-                    </label>
+                <div class="bloque-formulario">
+                    <form class="formulario formulario-centrado" action="#" method="post">
+                        <label class="campo">
+                            <span>Nombre</span>
+                            <input type="text" name="nombre" required />
+                        </label>
 
-                    <label class="campo">
-                        <span>Email</span>
-                        <input type="email" name="email" required />
-                    </label>
+                        <label class="campo">
+                            <span>Email</span>
+                            <input type="email" name="email" required />
+                        </label>
 
-                    <label class="campo">
-                        <span>Mensaje</span>
-                        <textarea name="mensaje" rows="5" required></textarea>
-                    </label>
+                        <label class="campo">
+                            <span>Mensaje</span>
+                            <textarea name="mensaje" rows="5" required></textarea>
+                        </label>
 
-                    <button class="boton" type="submit">Enviar</button>
-                </form>
+                        <button class="boton" type="submit">Enviar</button>
+                    </form>
+                </div>
             </div>
         </section>
     </main>

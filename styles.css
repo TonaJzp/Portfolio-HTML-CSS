@@ -29,8 +29,7 @@
 
 body {
   margin: 0;
-  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial,
-    sans-serif;
+  font-family: "Inter", system-ui;
   background: var(--color-fondo);
   color: var(--color-texto);
   line-height: 1.5;
@@ -45,7 +44,7 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+  font-family: "Playfair Display", Georgia;
 }
 
 h2 {
@@ -59,15 +58,13 @@ p {
 img {
   max-width: 100%;
   height: auto;
-  display: block;
 }
 
 .contenedor {
-  width: min(100% - 32px, var(--ancho-contenedor));
+  max-width: var(--ancho-contenedor);
+  padding: 0 16px;
   margin: 0 auto;
 }
-
-
 
 .cabecera {
   position: sticky;
@@ -78,26 +75,25 @@ img {
 }
 
 .navegacion {
-  width: min(100% - 32px, var(--ancho-contenedor));
+  max-width: var(--ancho-contenedor); 
   margin: 0 auto;
+  padding: 10px 16px; 
 
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  padding: 10px 0;
 }
 
 .marca {
   font-weight: 700;
-  letter-spacing: 0.2px;
   padding: 6px 8px;
   border-radius: 10px;
 }
 
 .marca:hover {
   background: var(--color-superficie);
-  transition: background 180ms ease;
+  transition: background 180ms ease;  
 }
 
 .lista-nav {
@@ -138,7 +134,6 @@ img {
 .enlace-nav:hover::after {
   transform: scaleX(1);
 }
-
 
 @media (max-width: 720px) {
 
@@ -183,7 +178,7 @@ img {
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1fr minmax(260px, 420px);
+  grid-template-columns: 1fr 420px;
   align-items: center;
   gap: 32px;
 }
@@ -195,8 +190,14 @@ img {
 
 .hero-titulo {
   margin: 0 0 10px;
-  font-size: clamp(34px, 4.2vw, 52px);
+  font-size: 34px;
   line-height: 1.1;
+}
+
+@media (min-width: 900px) {
+  .hero-titulo {
+    font-size: 52px;
+  }
 }
 
 .hero-texto {
@@ -221,8 +222,7 @@ img {
   width: 100%;
   max-width: 420px;
   height: auto;
-  transform-origin: center;
-  animation: tilt-3d 2.8s ease-in-out infinite;
+  animation: tilt-3d 2.8s infinite;
 }
 
 @media (max-width: 900px) {
@@ -242,7 +242,6 @@ img {
 
 
 .boton {
-  display: inline-block;
   padding: 10px 14px;
   border-radius: 10px;
   background: var(--color-acento);
@@ -267,15 +266,10 @@ button.boton {
   border: 1px solid var(--color-borde);
 }
 
-
 .rejilla {
   display: grid;
   gap: 16px;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-}
-
-.separador {
-  height: 18px;
 }
 
 .tarjeta {
@@ -298,8 +292,6 @@ button.boton {
 .imagen-tarjeta {
   border-radius: 12px;
   border: 1px solid var(--color-borde);
-  aspect-ratio: 16 / 10;
-  object-fit: cover;
 }
 
 .tarjeta h4 {
@@ -333,7 +325,8 @@ button.boton {
 }
 
 .lista-etiquetas {
-  width: min(100%, 720px);
+  width: 100%;
+  max-width: 720px;
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
@@ -363,15 +356,16 @@ button.boton {
 }
 
 .lista-contacto {
-  width: min(100%, 520px);
+  width: 100%;
+  max-width: 520px;
   list-style: none;
-  margin: 0;
   padding: 0;
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
   justify-content: center;
 }
+
 
 .lista-contacto li {
   flex: 1 1 150px;
@@ -402,7 +396,8 @@ button.boton {
 }
 
 .formulario-centrado {
-  width: min(100%, 520px);
+  width: 100%;
+  max-width: 520px;
   background: var(--color-superficie);
   border: 1px solid var(--color-borde);
   border-radius: 14px;
@@ -411,6 +406,7 @@ button.boton {
   display: grid;
   gap: 12px;
 }
+
 
 .campo {
   display: grid;
@@ -444,17 +440,12 @@ textarea {
   min-height: 120px;
 }
 
-.formulario-centrado .boton {
-  width: 100%;
-}
-
 .pie {
   border-top: 1px solid var(--color-borde);
   padding: 16px 0;
   color: var(--color-texto-suave);
   text-align: center;
 }
-
 
 
 @keyframes entrada-hero {
@@ -496,7 +487,6 @@ textarea {
 @supports (animation-timeline: view()) {
   .tarjeta {
     animation-name: aparecer-en-vista;
-    animation-timing-function: ease-out;
     animation-fill-mode: both;
     animation-timeline: view();
     animation-range: entry 0% cover 35%;
